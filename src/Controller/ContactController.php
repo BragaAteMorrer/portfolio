@@ -11,10 +11,11 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 class ContactController extends AbstractController
 {
-    #[Route('/send-message', name: 'send_message', methods: ['POST'])]
+    /**
+     * @Route("/send-message", name="send_message", methods={"POST"})
+     */
     public function sendMessage(Request $request, MailerInterface $mailer, ValidatorInterface $validator): Response
     {
         $name = $request->request->get('name');

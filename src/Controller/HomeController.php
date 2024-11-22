@@ -8,27 +8,41 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+    /**
+     * @Route("/", name="home")
+     */
     public function index(): Response
     {
         return $this->render('home/index.html.twig');
     }
-    #[Route('/a-propos-de-moi', name: 'quijesuis')]
+
+    /**
+     * @Route("/a-propos-de-moi", name="quijesuis")
+     */
     public function quijesuis(): Response
     {
         return $this->render('who/quijesuis.html.twig');
     }
-    #[Route('/mes-competences', name: 'mescompetences')]
+
+    /**
+     * @Route("/mes-competences", name="mescompetences")
+     */
     public function competences(): Response
     {
         return $this->render('who/mescompetences.html.twig');
     }
-    #[Route('/mes-creations', name: 'mescreations')]
+
+    /**
+     * @Route("/mes-creations", name="mescreations")
+     */
     public function creations(): Response
     {
         return $this->render('who/mescreations.html.twig');
     }
-    #[Route('/contacts', name: 'contacts')]
+
+    /**
+     * @Route("/contacts", name="contacts")
+     */
     public function contacts(): Response
     {
         return $this->render('contact/contacts.html.twig');
