@@ -1,0 +1,210 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        /* Global styles */
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .section-title {
+            color: #0090FF;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            color: #70B8FF;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid #205D9E;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.05);
+        }
+        .section a {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        .section a:hover {
+            text-decoration: underline;
+        }
+        .section img {
+            max-width: 80px;
+            margin-bottom: 1rem;
+        }
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        /* Header styles */
+        .header-title {
+            color: #0090FF;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .header-subtitle {
+            color: #70B8FF;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Profile section */
+        .profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .profile-info h3 {
+            color: #0090FF;
+            font-weight: bold;
+        }
+        .profile-info p {
+            color: #70B8FF;
+        }
+        .btn-contact {
+            background-color: #0090FF;
+            border: none;
+        }
+        .btn-contact:hover {
+            background-color: #3B9EFF;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-logo {
+            width: 28px;
+            height: 28px;
+            margin-right: 0.5rem;
+            object-fit: contain;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 2px;
+        }
+        .profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .form-control {
+            background-color: #111927;
+            color: #C2E6FF;
+            border: 1px solid #205D9E;
+        }
+        .form-control:focus {
+            background-color: #111927;
+            border-color: #0090FF;
+            box-shadow: none;
+        }
+        .contact-info {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+        .contact-info a {
+            color: #70B8FF;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            color: #0090FF;
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Contactez-moi</h1>
+
+    {% if errors is defined and errors|length > 0 %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <form method="post" action="{{ path('send_message') }}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                name="name" 
+                placeholder="Votre nom" 
+                required 
+                value="{{ old_data.name|default('') }}">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email" 
+                placeholder="Votre email" 
+                required 
+                value="{{ old_data.email|default('') }}">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea 
+                class="form-control" 
+                id="message" 
+                name="message" 
+                rows="5" 
+                placeholder="Votre message" 
+                required>{{ old_data.message|default('') }}</textarea>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    </form>
+
+    <div class="contact-info">
+        <h2>Informations de contact</h2>
+        <p>Email: <a href="mailto:nene.almeida78@gmail.com">nene.almeida78@gmail.com</a></p>
+        <p>Téléphone: <a href="tel:+33769197860">+33 7 69 19 78 60</a></p>
+        <p>Adresse: 31 Boulevard Saint Michel, Savigny sur Orge, France</p>
+    </div>
+</div>
+{% endblock %}

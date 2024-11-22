@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui je suis{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #0D1520;
+            color: #C2E6FF;
+        }
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        /* Header styles */
+        .header-title {
+            color: #0090FF;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .header-subtitle {
+            color: #70B8FF;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Profile section */
+        .profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .profile-info h3 {
+            color: #0090FF;
+            font-weight: bold;
+        }
+        .profile-info p {
+            color: #70B8FF;
+        }
+
+        /* Skills section */
+        .skills-list li {
+            color: #C2E6FF;
+            margin-bottom: 0.5rem;
+        }
+        .skills-list li::before {
+            content: '✔';
+            color: #0090FF;
+            margin-right: 0.5rem;
+        }
+
+        /* Contact buttons */
+        .btn-contact {
+            background-color: #0090FF;
+            border: none;
+            color: #fff;
+        }
+        .btn-contact:hover {
+            background-color: #3B9EFF;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-logo {
+            width: 28px;
+            height: 28px;
+            margin-right: 0.5rem;
+            object-fit: contain;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 2px;
+        }            
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="header-title">Mes Compétences</h1>
+    <p class="header-subtitle">Un petit pêle-mêle de mes compétences</p>
+
+    <div class="row align-items-center">
+        <!-- Image de profil -->
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img src="{{ asset('images/profil.jpeg') }}" alt="Photo de profil" class="profile-picture img-fluid">
+        </div>
+
+        <!-- Informations personnelles -->
+        <div class="col-md-8 profile-info">
+            <h3>Qu'est ce que j'ai appris ?</h3>
+            <p>Après plus de 4 ans dans le dev, j'ai pu apprendre énormement de choses dans des domaines différents mais tous aussi importants.</p>
+            <p>En passant par l'apprentissage des Bases de Données, du Front, du Back ou encore du réseau, je vous laisse parcourir pêle-mêle les différentes choses que j'ai pu apprendre.</p>
+
+            <h3 class="header-title">Mes compétences</h3>
+            <ul class="skills-list">
+                <li><img src="{{ asset('images/logos/html5.png') }}" alt="HTML5 Logo" class="tech-logo"> HTML5</li>
+                <li><img src="{{ asset('images/logos/css3.png') }}" alt="CSS3 Logo" class="tech-logo"> CSS3</li>
+                <li><img src="{{ asset('images/logos/php.png') }}" alt="PHP Logo" class="tech-logo"> PHP</li>
+                <li><img src="{{ asset('images/logos/javascript.png') }}" alt="JavaScript Logo" class="tech-logo"> JavaScript</li>
+                <li><img src="{{ asset('images/logos/nodejs.png') }}" alt="Node.js Logo" class="tech-logo"> Node.js</li>
+                <li><img src="{{ asset('images/logos/react.png') }}" alt="React Logo" class="tech-logo"> React / React Native</li>
+                <li><img src="{{ asset('images/logos/symfony.png') }}" alt="Symfony Logo" class="tech-logo"> Symfony</li>
+                <li><img src="{{ asset('images/logos/c.png') }}" alt="C Logo" class="tech-logo"> C</li>
+                <li><img src="{{ asset('images/logos/cpp.png') }}" alt="C++ Logo" class="tech-logo"> C++</li>
+                <li><img src="{{ asset('images/logos/csharp.png') }}" alt="C# Logo" class="tech-logo"> C#</li>
+                <li><img src="{{ asset('images/logos/lua.png') }}" alt="LUA Logo" class="tech-logo"> LUA</li>
+                <li><img src="{{ asset('images/logos/python.png') }}" alt="Python Logo" class="tech-logo"> Python</li>
+                <li><img src="{{ asset('images/logos/mysql.png') }}" alt="MySQL Logo" class="tech-logo"> MySQL</li>
+                <li><img src="{{ asset('images/logos/git.png') }}" alt="GIT Logo" class="tech-logo"> Git</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-5" style="border-top: 1px solid #205D9E;">
+
+    <!-- Compétences principales -->
+    <h3 class="header-title">Mes créations</h3>
+    <p class="header-subtitle">Afin de voir au mieux mes compétences, vous trouverez ci-joint mes compétences et les sites que j'ai pu concevoir.</p>
+    <div class="text-center">
+        <a class="btn btn-contact me-2" href="{{ path('mescreations') }}">Cliquez ici pour découvrir mes créations</a>
+    </div>
+
+    <hr class="my-5" style="border-top: 1px solid #205D9E;">
+
+    <!-- Contact -->
+    <h3 class="header-title">Me contacter</h3>
+    <p class="header-subtitle">N'hésitez pas à me contacter pour des collaborations ou des opportunités professionnelles</p>
+    <div class="text-center">
+        <a href="mailto:nene.almeida78@gmail.com" class="btn btn-contact me-2"><img src="{{ asset('images/logos/gmail.png') }}" alt="Linkedin Logo" class="tech-logo"> Email</a>
+        <a href="https://www.linkedin.com/in/nelson-almeida-0b6492256/" target="_blank" class="btn btn-contact me-2"><img src="{{ asset('images/logos/linkedin.png') }}" alt="Linkedin Logo" class="tech-logo"> LinkedIn</a>
+        <a href="https://github.com/BragaAteMorrer" target="_blank" class="btn btn-contact"><img src="{{ asset('images/logos/github.png') }}" alt="GITHUB Logo" class="tech-logo"> GitHub</a>
+    </div>
+</div>
+{% endblock %}

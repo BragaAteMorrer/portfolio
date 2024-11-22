@@ -1,0 +1,122 @@
+{# templates/navbar.twig #}
+<nav class="navbar navbar-expand-lg navbar-dark" style="color: #C2E6FF;">
+    <div class="container">
+        <!-- Site Branding (Logo) -->
+        <div class="row align-items-center">
+            <!-- Image et nom -->
+            <div class="col-md-2 text-center mb-4 mb-md-0 d-flex align-items-center">
+                <img src="{{ asset('images/profil.jpeg') }}" alt="Photo de profil" class="small-profile-picture img-fluid me-3">
+                <span style="color: #C2E6FF; font-size: 1.2rem; font-weight: bold;">Nelson Almeida</span>
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('home') }}" style="color: #C2E6FF;">Accueil</a>
+                </li>
+                
+                <!-- Dropdown: GROUPE -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="{{ path('quijesuis') }}" style="color: #C2E6FF;">Qui je suis ?</a>
+                </li>
+
+                <!-- Dropdown: PHOTOS / VIDEOS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="photosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #C2E6FF;">
+                        Mes Compétences / Mes Créations
+                    </a>
+                    <ul class="dropdown-menu dropdown-custom" aria-labelledby="photosDropdown">
+                        <li><a class="dropdown-item dropdown-item-custom" href="{{ path('mescompetences') }}">Mes Compétences Techniques</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="{{ path('mescreations') }}">Mes Créations</a></li>
+                    </ul>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.canva.com/design/DAFcEYcb12g/stQmECf_25WmSy5sV0saVA/view?utm_content=DAFcEYcb12g&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank" rel="noopener noreferrer" style="color: #C2E6FF;">Mon CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('contacts') }}" style="color: #C2E6FF;">Mes Contacts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block stylesheets %}
+    <style>
+        /* Background and basic colors */
+        body {
+            background-color: #0D1520;
+            color: #C2E6FF;
+        }
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Header styles */
+        .portfolio-title {
+            color: #0090FF;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .portfolio-subtitle {
+            color: #70B8FF;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Dropdown styles */
+        .dropdown-custom {
+            background-color: #111927;
+            border: 1px solid #205D9E;
+            border-radius: 0px;
+            padding: 0;
+        }
+        .dropdown-item-custom {
+            color: #C2E6FF;
+            background-color: #111927;
+            padding: 10px 20px;
+        }
+        .dropdown-item-custom:hover {
+            background-color: #205D9E;
+            color: #C2E6FF;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #111927;
+            border: 1px solid #205D9E;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #C2E6FF;
+        }
+        .card-img-top {
+            border-bottom: 2px solid #104D87;
+            border-radius: 8px 8px 0 0;
+        }
+        .card-title {
+            color: #0090FF;
+            font-weight: bold;
+        }
+        .card-text {
+            color: #70B8FF;
+        }
+        .btn-primary {
+            background-color: #0090FF;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #3B9EFF;
+        }
+    </style>
+{% endblock %}

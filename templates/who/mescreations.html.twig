@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        /* Background and basic colors */
+        body {
+            background-color: #0D1520;
+            color: #C2E6FF;
+        }
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Header styles */
+        .portfolio-title {
+            color: #0090FF;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .portfolio-subtitle {
+            color: #70B8FF;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #111927;
+            border: 1px solid #205D9E;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #C2E6FF;
+        }
+        .card-img-top {
+            border-bottom: 2px solid #104D87;
+            border-radius: 8px 8px 0 0;
+        }
+        .card-title {
+            color: #0090FF;
+            font-weight: bold;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .card-text {
+            color: #70B8FF;
+        }
+        .btn-primary-roomlers {
+            background-color: #FFCC00;
+            border: none;
+            color: #000000;
+        }
+        .btn-primary-roomlers:hover {
+            background-color: #997A00;
+            color: #FFFFFF;
+        }
+        .btn-primary-fiapfiap {
+            background-color: #F25C05;
+            color: #FFFFFF;
+            border: none;
+        }
+        .btn-primary-fiapfiap:hover {
+            background-color: #893504;
+            color: #FFFFFF;
+        }
+        .btn-primary:hover {
+            background-color: #3B9EFF;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="portfolio-title">Mes Créations</h1>
+    <p class="portfolio-subtitle">Découvrez mes projets et créations</p>
+
+    <div class="row mt-4">
+        <!-- Exemple de projet 1 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ asset('images/projet/roomlers.png') }}" alt="Roomlers" class="tech-logo">
+                <div class="card-body">
+                    <h5 class="card-title">Roomlers</h5>
+                    <p class="card-text">Roomlers est une plateforme en ligne dédiée à la location de logements en France pour les étudiants étrangers souhaitant venir faire leurs études. Elle propose une variété d'options, notamment des appartements, des chambres privées et des chambres partagées, adaptées aux besoins des locataires. Les annonces récentes incluent des offres à Chartres, Fontainebleau, Deuil-la-Barre, Sannois, Lille, Toulouse et Noisy-le-Grand, avec des loyers mensuels variant selon la localisation et le type de logement. <br><br> Chaque annonce fournit des informations détaillées sur le logement, telles que la superficie, les équipements disponibles et la date de début de location. Par exemple, une annonce pour un appartement de 19 m² à Puteaux décrit des studios et appartements haut de gamme, entièrement meublés, avec toutes les charges incluses (eau, électricité et Wi-Fi), offrant une vue sur la ville ou sur les jardins résidentiels. <br><br> Roomlers met également en avant les équipements exclusifs des logements réservés aux résidents, tels que des salons, des salles de sport high-tech, des terrasses sur le toit, des espaces de coworking et des parkings sécurisés sur place. Des services supplémentaires, comme la conciergerie et le service client, sont disponibles pour répondre aux besoins des locataires. <br><br> La plateforme offre une interface conviviale permettant aux utilisateurs de rechercher des logements selon leurs critères spécifiques, facilitant ainsi la recherche d'un logement adapté à leurs besoins.<br><br> Roomlers cherche aussi par son système à intégrer des fonctionnalités uniques tels que la demande de VISA directement disponible en ligne afin de faciliter les démarches administratives aux étudiants</p>
+                    <a href="https://roomlers.com/" class="btn btn-primary-roomlers">Voir plus sur le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemple de projet 2 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ asset('images/projet/fiapfiap.png') }}" alt="FiapFiap" class="tech-logo">
+                <div class="card-body">
+                    <h5 class="card-title">Fiap Fiap - Livraison collaborative dans les DOM-TOM</h5>
+                    <p class="card-text">Fiap Fiap est une plateforme innovante de livraison collaborative, principalement active en Martinique, Guadeloupe et Guyane. Elle permet aux particuliers et aux professionnels de faire livrer des colis localement de manière rapide et efficace. <br><br>Les utilisateurs peuvent s'inscrire en tant que "Fiapsters" pour effectuer des livraisons selon leurs disponibilités et le type de véhicule qu'ils possèdent. L'idée de Fiap Fiap est née en 2021, lorsque son fondateur, Edwin, a rencontré des difficultés pour faire livrer un coffret de vin à une collègue située dans une autre ville. Cette expérience l'a conduit à créer une solution de livraison locale qui répond aux besoins des particuliers et des entreprises dans les DOM-TOM.<br><br> En somme, Fiap Fiap se positionne comme le premier service de livraison locale et express collaborative dans les départements et territoires d'outre-mer français, offrant une alternative flexible et communautaire aux services de livraison traditionnels.</p>
+                    <a href="https://fiap-fiap.fr/" class="btn btn-primary-fiapfiap">Voir plus sur le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemple de projet 3 -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ asset('images/projet/uploadfichier.png') }}" alt="uploadfichier" class="tech-logo">
+                <div class="card-body">
+                    <h5 class="card-title">Projet d'Upload temporaire</h5>
+                    <p class="card-text">Un projet réalisé qui consiste en un système inspiré de Wetransfer avec un système d'upload temporaire de fichier, un système de connexion permettant de pouvoir conserver les liens des uploads que l'on a fait.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 profile-info">
+            <p>En tant qu'étudiant, j'ai pu créer de nombreux projets durant mes deux années à EFFICOM et mon année à HETIC qui vont du developpement web comme de l'infrastructure réseau</p>
+            <p>Si vous souhaitez en savoir plus sur ces derniers je vous les communiquerai avec plaisir.</p>
+
+            <h3 class="header-title">Mes Projets Académiques</h3>
+            <ul class="skills-list">
+                <li>Projet de dépannage / Adressage IP Cisco Packet Tracer (2022- 2024)</li>
+                <li>Mise en place de Machines Virtuelles Linux avec BDD/GLPI (2022- 2024)</li>
+                <li>Création d'un jeu RPG en HTML / CSS / JS (2022)</li>
+                <li>Mise pratique de l'algorithmie en Python (2022-2023)</li>
+                <li>Création de code en PHP pour relier une base de données (2022)</li>
+                <li>Création d'un site en Symfony (Shorticom) (2023)</li>
+                <li>Mise en production / mise en test / CI-CD / Pipeline</li>
+                <li>Code en C# pour pinger une API météorologique (2024)</li>
+                <li>Débogage de réseau / téléphonie avec Cisco Packet Tracer (2024)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

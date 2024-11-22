@@ -1,0 +1,124 @@
+{# templates/qui_je_suis.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui je suis{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #0D1520;
+            color: #C2E6FF;
+        }
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        /* Header styles */
+        .header-title {
+            color: #0090FF;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .header-subtitle {
+            color: #70B8FF;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Profile section */
+        .profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .profile-info h3 {
+            color: #0090FF;
+            font-weight: bold;
+        }
+        .profile-info p {
+            color: #70B8FF;
+        }
+
+        /* Skills section */
+        .skills-list li {
+            color: #C2E6FF;
+            margin-bottom: 0.5rem;
+        }
+        .skills-list li::before {
+            content: '✔';
+            color: #0090FF;
+            margin-right: 0.5rem;
+        }
+
+        /* Contact buttons */
+        .btn-contact {
+            background-color: #0090FF;
+            border: none;
+            color: #fff;
+        }
+        .btn-contact:hover {
+            background-color: #3B9EFF;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="header-title">Qui je suis</h1>
+    <p class="header-subtitle">Découvrez un peu plus sur moi, mon parcours et mes compétences</p>
+
+    <div class="row align-items-center">
+        <!-- Image de profil -->
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img src="{{ asset('images/profil.jpeg') }}" alt="Photo de profil" class="profile-picture img-fluid">
+        </div>
+
+        <!-- Informations personnelles -->
+        <div class="col-md-8 profile-info">
+            <h3>Bonjour, je m'appelle Nelson Almeida</h3>
+            <p>Je suis étudiant en 3ème année en développement web au sein de l'école HETIC, passionné de développement depuis mes 14 ans. Je souhaite créer des expériences numériques uniques et efficaces par des applications ou des sites web.</p>
+            <p>Actuellement basé en Région Parisienne, je suis à la recherche d'une alternance sur une période de 1 an ou plus afin d'améliorer mes compétences et de valider mon diplôme.</p>
+
+            <h3 class="header-title">Ce que je recherche</h3>
+            <ul class="skills-list">
+                <li>Une Alternance</li>
+                <li>Période d'une année ou plus</li>
+                <li>Paris et sa Banlieue (78, 91, 92, 93, 94, 95)</li>
+                <li>Développeur Full-Stack, Front ou Back-End</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-5" style="border-top: 1px solid #205D9E;">
+
+    <!-- Compétences principales -->
+    <h3 class="header-title">Compétences principales</h3>
+    <p class="header-subtitle">Afin de voir au mieux mes compétences, vous trouverez ci-joint mes compétences et les sites que j'ai pu concevoir.</p>
+    <div class="text-center">
+        <a class="btn btn-contact me-2" href="{{ path('mescompetences') }}">Pour voir mes compétences</a>
+        <a class="btn btn-contact me-2" href="{{ path('mescreations') }}">Pour découvrir mes créations</a>
+    </div>
+
+
+    <hr class="my-5" style="border-top: 1px solid #205D9E;">
+
+    <!-- Contact -->
+    <h3 class="header-title">Me contacter</h3>
+    <p class="header-subtitle">N'hésitez pas à me contacter pour des collaborations ou des opportunités professionnelles</p>
+    <div class="text-center">
+        <a href="mailto:tonemail@example.com" class="btn btn-contact me-2">Email</a>
+        <a href="https://linkedin.com/in/tonprofil" target="_blank" class="btn btn-contact me-2">LinkedIn</a>
+        <a href="https://github.com/tonprofil" target="_blank" class="btn btn-contact">GitHub</a>
+    </div>
+</div>
+{% endblock %}

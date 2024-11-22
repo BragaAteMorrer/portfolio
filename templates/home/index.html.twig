@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        /* Global styles */
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .section-title {
+            color: #0090FF;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            color: #70B8FF;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid #205D9E;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.05);
+        }
+        .section a {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        .section a:hover {
+            text-decoration: underline;
+        }
+        .section img {
+            max-width: 80px;
+            margin-bottom: 1rem;
+        }
+        .container {
+            background-color: #111927;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        /* Header styles */
+        .header-title {
+            color: #0090FF;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .header-subtitle {
+            color: #70B8FF;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Profile section */
+        .profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .profile-info h3 {
+            color: #0090FF;
+            font-weight: bold;
+        }
+        .profile-info p {
+            color: #70B8FF;
+        }
+        .btn-contact {
+            background-color: #0090FF;
+            border: none;
+        }
+        .btn-contact:hover {
+            background-color: #3B9EFF;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-logo {
+            width: 28px;
+            height: 28px;
+            margin-right: 0.5rem;
+            object-fit: contain;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 2px;
+        }
+        .profile-picture {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+        .small-profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            border: 2px solid #205D9E;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="section-title">Bienvenue sur mon Portfolio</h1>
+    <p class="section-subtitle">Explorez les différentes sections pour en savoir plus sur moi, mes compétences et mes projets.</p>
+
+    <!-- Section "Qui je suis" -->
+    <div class="section">
+        <img src="{{ asset('images/profil.jpeg') }}" alt="Qui je suis" class="profile-picture img-fluid">
+        <h2>Qui je suis</h2>
+        <p>Découvrez mon parcours, mes objectifs et mes motivations.</p>
+        <a href="{{ path('quijesuis') }}" class="btn btn-contact me-2">En savoir plus</a>
+    </div>
+
+    <!-- Section "Mes Compétences" -->
+    <div class="section">
+        <img src="{{ asset('images/logos/html5.png') }}" alt="HTML5 Logo" class="tech-logo">
+        <img src="{{ asset('images/logos/css3.png') }}" alt="CSS3 Logo" class="tech-logo">
+        <img src="{{ asset('images/logos/php.png') }}" alt="PHP Logo" class="tech-logo">
+        <img src="{{ asset('images/logos/javascript.png') }}" alt="JavaScript Logo" class="tech-logo">
+        <h2>Mes Compétences</h2>
+        <p>Consultez mes compétences techniques et domaines d'expertise.</p>
+        <a href="{{ path('mescompetences') }}" class="btn btn-contact me-2">Voir mes compétences</a>
+    </div>
+
+    <!-- Section "Mes Créations" -->
+    <div class="section">
+        <img src="{{ asset('images/logos/roomlers.png') }}" alt="Roomlers">
+        <h2>Mes Créations</h2>
+        <p>Explorez les projets que j'ai réalisés et les défis que j'ai relevés.</p>
+        <a href="{{ path('mescreations') }}" class="btn btn-contact me-2">Découvrir mes créations</a>
+    </div>
+</div>
+{% endblock %}
